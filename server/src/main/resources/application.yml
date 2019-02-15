@@ -1,14 +1,14 @@
 server:
-    port: 8080
+    port: 8080 ##服务器启动端口
 eureka:
     server:
-        enable-self-preservaion: false
+        enable-self-preservaion: false  ##是否开启自我保护，默认为true，在开启自我保护的情况下，注册中心在丢失客户端时，会进入自动保护模式，注册中心并不会将该服务从注册中心删除掉。
     instance:
-        preferIpAddress: true
+        preferIpAddress: true ##是否以IP注册到注册中心，Eureka默认是以hostname来注册的。
         hostname: localhost
         instanceId: localhost:${server.port}
     client:
         registerWithEureka: false
         fetchRegistry: false
         serviceUrl:
-            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  ##注册中心默认地址

@@ -10,5 +10,5 @@ spring:
 zuul:
     routes:
         api:
-            path: /api/**
-            serviceId: worker
+            path: /api/**  ##指定请求的基础地址，其中api可以是任何字符
+            serviceId: worker  ##转发到的服务ID，也就是指定服务的application.name
