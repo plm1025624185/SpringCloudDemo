@@ -47,9 +47,11 @@ SpringCloudDemo
 #### 2.2.2.1.项目结构
 
 * com.example.gateway
+		
 		服务启动类所在的包，需要对启动类添加@EnableEurekaClient注解，说明该项目需要注册到服务中心;添加@EnableZuulProxy注解，说明该项目是服务网关。
 
 * com.example.gateway.filter
+		
 		服务拦截器所在的包。服务网关可以对接口的安全性进行校验，我们可以通过网关进行统一拦截，zuul通过继承过滤器ZuulFilter进行处理。服务是部署在不同的服务器下的，难免会遇到某一个服务挂掉或者请求不到的时候，我们可以通过继承FallbackProvider来对请求不到的服务进行错误处理。
 
 <a name="worker" />
@@ -59,9 +61,11 @@ SpringCloudDemo
 #### 2.2.3.1.项目结构
 
 * com.example.worker
+		
 		worker节点启动类所在的包，需要对启动类添加@EnableEurekaClient注解，说明该项目需要注册到服务中心。
 
 * com.example.worker.controller
+		
 		控制器层，接口提供层
 
 
@@ -70,10 +74,13 @@ SpringCloudDemo
 #### 2.2.4.1.项目结构
 
 * com.example.feign
+		
 		feign启动类所在的包，添加@EnableFeignClients和@EnableEurekaClient注解，其中@EnableFeignClients指开启声明式http客户端。
 
 * com.example.feign.service
+		
 		feign消费服务所在的包。@FeignClient注解用于配置调用的服务地址。
 
 * src/test下的com.example.feign.service
+		
 		对服务消费类进行测试。
