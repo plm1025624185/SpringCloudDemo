@@ -1,0 +1,23 @@
+server:
+    port: 8888
+spring:
+    application:
+        name: config
+    profiles:
+        active: dev
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/plm1025624185/SpringCloudDemo.git  ##配置git仓库地址
+                    searchPaths: configFiles
+                    username: plm1025624185
+                    password: panleiming861128
+            label: master  ##配置仓库的分支
+eureka:
+    instance:
+        hostname: ${spring.cloud.client.ip-address}
+        instanceId: ${spring.cloud.client.ip-address}:${server.port}
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8080/eureka/           
