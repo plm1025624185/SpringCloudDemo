@@ -5,3 +5,5 @@ eureka:
 spring:
     application:
         name: work
+server:
+    port: 8083
