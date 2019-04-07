@@ -5,3 +5,10 @@ eureka:
 spring:
     application:
         name: work
+management:
+    endpoints:
+        web:
+            exposure:
+                include: refresh, health, info
+server:
+    port: 8083
