@@ -6,8 +6,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
 @EnableEurekaClient
+@EnableFeignClients
 public class FeignApplication {
 
 	public static void main(String[] args) {
@@ -15,4 +15,3 @@ public class FeignApplication {
 	}
 
 }
-
